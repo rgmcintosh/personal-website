@@ -13,6 +13,8 @@
 
     gtag('config', 'G-HWTXF10KYX');
   </script>
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 </head>
 <title>Rob McIntosh</title>
 <meta charset="utf-8">
@@ -59,8 +61,8 @@
           </li>
         </ul>
         <ul class="navbar-nav sm-icons ml-auto">
-          <li><a class="nav-link" href="https://github.com/rgmcintosh" target="_blank"><i
-            class="fa fa-github" aria-hidden="true"></i></a></li>
+          <li><a class="nav-link" href="https://github.com/rgmcintosh" target="_blank"><i class="fa fa-github"
+                aria-hidden="true"></i></a></li>
           <li><a class="nav-link" href="https://www.linkedin.com/in/rgmcintosh/" target="_blank"><i
                 class="fa fa-linkedin" aria-hidden="true"></i></a></li>
         </ul>
@@ -84,7 +86,7 @@
   <div id="about" class="container px-4 py-5 my-5 bg-light">
     <h2 class="text-center py-3">About Me</h2>
     <div class="row">
-      <div class="col-sm-8 py-2">Hello, I'm Rob McIntosh, an information technology professional with a passion for data
+      <div class="col-sm-8 py-2">Hi, I'm Rob McIntosh, an information technology professional with a passion for data
         and web technologies. With several years of experience in the field, I have developed a strong expertise in
         managing and analyzing complex data sets, leveraging technology to drive insights and improve decision-making
         processes. I thrive in the fast-paced and ever-evolving world of IT, constantly seeking innovative solutions to
@@ -353,11 +355,38 @@
   <div id="portfolio" class="container px-4 py-5 my-5 bg-light">
     <h2 class="text-center py-3">Portfolio</h2>
     <div class="row">
-      <div class="col-sm-6 mx-auto">
+      <div class="col-md-6 mb-3">
         <div class="card">
           <div class="card-body">
             <div class="text-center py-2"><img src="images/FTIH_Logo_500x500.png" alt="" width="100" height="100"></div>
-            <h5 class="card-title">Florida Tech Ice Hockey</h5>
+            <h5 class="card-title; text-center">GameDay</h5>
+            <p class="card-text">Tool developed for the players and coaches of the Florida Tech Ice Hockey Team to help
+              prepare for games. This
+              allowed coaches to provide information to players, without taking up time in a meeting or video session.
+              Project is built with Vue.js and Bootstrap, and utilizes compiled data stored in team's stats database, as
+              well as Firebase for authentication.
+            </p>
+            <div class="text-center">
+              <div id="btn" class="btn btn-secondary btn-sm">Demo Login Credentials</div>
+            </div>
+            <br>
+            <div id="demo">
+              Email: demo@floridatechhockey.com
+              <br>
+              Password: Demo123#
+              <br>
+            </div>
+            <div class="text-center">
+              <a href="https://floridatechhockey.com/gameday" target="_blank" class="btn btn-secondary">Visit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="text-center py-2"><img src="images/FTIH_Logo_500x500.png" alt="" width="100" height="100"></div>
+            <h5 class="card-title; text-center">Florida Tech Ice Hockey</h5>
             <p class="card-text">Website and logo created for the Florida Tech Ice Hockey team. Project is built on
               WordPress, using a theme as a starting point. Pages use HTML and CSS, with roster and stats pages
               utilizing PHP and Vue.js to read and display data from MySQL database.</p>
@@ -376,3 +405,12 @@
 </body>
 
 </html>
+
+<script>
+  $(document).ready(function () {
+    $("#demo").css("display", "none");
+    $("#btn").click(function () {
+      $("#demo").toggle();
+    });
+  });
+</script>
