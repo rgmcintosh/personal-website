@@ -17,9 +17,10 @@
     <title>Rob McIntosh</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="description" content="Rob McIntosh's personal site, featuring IT expertise, hockey coaching, and the SyncHockey app for game analysis.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
@@ -30,20 +31,11 @@
         .navbar .navbar-nav .sm-icons .nav-link {
             padding-right: 1em;
         }
-/*
-        .rounded-circle {
-            transition: transform 0.3s ease;
-        }
 
-        .rounded-circle:hover {
-            transform: scale(1.1);
-        }
-*/
         .btn-primary:hover {
             background-color: #0056b3;
             transition: background-color 0.3s ease;
         }
-
 
         .navbar {
             position: sticky;
@@ -54,15 +46,13 @@
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             font-family: 'Roboto', sans-serif;
         }
 
         .hero-section {
             background: #f5f5f5;
-            /*background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5)), url('images/hero-background.jpg') no-repeat center center;
-            */
             background-size: cover;
             color: #333;
             padding: 100px 0;
@@ -88,6 +78,33 @@
         .social-icons a:hover {
             color: #007bff;
         }
+
+        .synchockey-section {
+            background-color: #1a237e; /* Dark blue for hockey feel */
+            color: #fff;
+        }
+        .synchockey-section .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+        }
+        .synchockey-section .card-title {
+            color: #00b7ff; /* Light blue for contrast */
+        }
+        .synchockey-section .card-text {
+            color: #e0e0e0;
+        }
+        .portfolio-logo {
+  max-width: 100px; /* Adjust the size to fit within the card */
+  height: auto;
+  border-radius: 50%; /* This will make the image fully rounded, like a circle */
+}
+#portfolio .row .col-md-6 .card {
+  height: 100%; /* This ensures the card takes up the full height of its parent */
+}
+
+#portfolio .row .col-md-6 {
+  display: flex; /* Flexbox for equal height */
+}
     </style>
 </head>
 
@@ -115,14 +132,14 @@
           </li>
         </ul>
         <ul class="navbar-nav sm-icons ms-auto">
-          <li><a class="nav-link" href="mailto:rob@rgmcintosh.com" target="_blank"><i class="fa fa-envelope"
+          <li><a class="nav-link" href="mailto:rob@rgmcintosh.com" target="_blank"><i class="fa-solid fa-envelope"
             aria-hidden="true"></i></a></li>
-            <li><a class="nav-link" href="https://www.linkedin.com/in/rgmcintosh/" target="_blank"><i class="fa fa-linkedin"
+            <li><a class="nav-link" href="https://www.linkedin.com/in/rgmcintosh/" target="_blank"><i class="fa-brands fa-linkedin"
               aria-hidden="true"></i></a></li>
-          <li><a class="nav-link" href="https://github.com/rgmcintosh" target="_blank"><i class="fa fa-github"
+          <li><a class="nav-link" href="https://github.com/rgmcintosh" target="_blank"><i class="fa-brands fa-github"
                 aria-hidden="true"></i></a></li>
           <li><a class="nav-link" href="resume/RobertGMcIntosh-Resume.pdf" target="_blank"><i
-                class="fa fa-file" aria-hidden="true"></i></a></li>
+                class="fa-solid fa-file" aria-hidden="true"></i></a></li>
         </ul>
       </div>
     </div>
@@ -131,12 +148,12 @@
   <div class="hero-section bg-light px-4 py-5 my-5 text-center">
     <img class="d-block mx-auto mb-4 rounded-circle" src="images/RM_300x300.png" alt="Rob McIntosh" width="300" height="300">
     <h1 class="hero-title">Hi, I'm Rob McIntosh!</h1>
-    <p class="hero-description">I’m an IT professional specializing in data and web solutions, dedicated to driving efficiency and innovation. I also coach college hockey, applying my strategic skills to achieve success.</p>
+    <p class="hero-description">I’m an IT professional specializing in data and web solutions, focused on driving efficiency and innovation. I also coach hockey, where I apply my strategic skills to achieve success both on and off the ice.</p>
     <div class="social-icons d-flex justify-content-center mb-4">
-        <a class="nav-link me-3" href="mailto:rob@rgmcintosh.com" target="_blank"><i class="fa fa-envelope fa-2x"></i></a>
-        <a class="nav-link me-3" href="https://www.linkedin.com/in/rgmcintosh/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
-        <a class="nav-link me-3" href="https://github.com/rgmcintosh" target="_blank"><i class="fa fa-github fa-2x"></i></a>
-        <a class="nav-link me-3" href="resume/RobertGMcIntosh-Resume.pdf" target="_blank"><i class="fa fa-file fa-2x"></i></a>
+        <a class="nav-link me-3" href="mailto:rob@rgmcintosh.com" target="_blank"><i class="fa-solid fa-envelope fa-2x"></i></a>
+        <a class="nav-link me-3" href="https://www.linkedin.com/in/rgmcintosh/" target="_blank"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+        <a class="nav-link me-3" href="https://github.com/rgmcintosh" target="_blank"><i class="fa-brands fa-github fa-2x"></i></a>
+        <a class="nav-link me-3" href="resume/RobertGMcIntosh-Resume.pdf" target="_blank"><i class="fa-solid fa-file fa-2x"></i></a>
     </div>
   </div>
 
@@ -152,10 +169,10 @@
   </div>
 
     <div class="row g-4">
-        <div class="col-12 col-md-4 text-center"> <!-- Adjusted for responsiveness -->
+        <div class="col-12 col-md-4 text-center">
             <img src="images/coach_250x250.png" class="rounded" alt="Coach Image">
         </div>
-        <div class="col-12 col-md-8 text-padding"> <!-- Adjusted for responsiveness and added padding -->
+        <div class="col-12 col-md-8">
             <p>In addition to my work in IT, I am also a college hockey coach for my alma mater. Hockey has always been a huge part of my life, and it's been incredibly rewarding to be able to combine my love for the sport with my expertise in data analysis. By using data to inform our coaching decisions and strategy, we've been able to achieve some great results on the ice. Overall, I feel incredibly fortunate to be able to pursue both of my passions in my career, and I'm always looking for new opportunities to learn and grow in both the technology and hockey worlds.</p>
         </div>
     </div>
@@ -389,39 +406,35 @@
       </div>
     </div>
   </div>
-  </div>
 
   <div id="portfolio" class="container px-4 py-5 my-5 bg-light">
     <h2 class="text-center py-3">Portfolio</h2>
     <div class="row justify-content-center">
+      <!-- SyncHockey Project -->
       <div class="col-md-6 mb-3">
         <div class="card">
           <div class="card-body">
-            <div class="text-center img py-2"><img src="images/FTIH_Logo_500x500.png" alt="" width="100" height="100" style="display: none;"></div>
-            <h5 class="card-title; text-center">GameDay</h5>
-            <p class="card-text">Tool developed for the players and coaches of the Florida Tech Ice Hockey Team to help
-              prepare for games. This
-              allows coaches to provide information to players, without taking up time in a meeting or video session.
-              Project is built with Vue.js and Bootstrap, and utilizes compiled data stored in team's stats database, as
-              well as Firebase for authentication.
-            </p>
-            <br>
-            <div class="text-center">
-              <a href="https://gameday2.netlify.app/demo" target="_blank" class="btn btn-secondary">Visit</a>
+            <div class="text-center img py-2">
+              <img src="images/synchockey.png" alt="SyncHockey Logo" width="100" height="100" class="img-fluid portfolio-logo">
+            </div>
+            <h5 class="card-title text-center">SyncHockey</h5>
+            <p class="card-text">Developed SyncHockey, a web app built with Vue.js, BootstrapVue, and Pinia for state management. The app tracks live game data, generates detailed scouting reports, and provides team analytics. Players can also view performance analytics and scouting reports. Built with D3.js for data visualization and Firebase for backend services, the app is used by Florida Tech Ice Hockey to track over 200 data points per game. Open to feedback from coaches, staff, and players to help refine and improve features.</p>
+            <div id class="text-center button-row">
+              <a href="https://synchockey.com" target="_blank" class="btn btn-secondary">Visit SyncHockey Page</a>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6 mb-3" style="display: none;">
+
+      <!-- Florida Tech Ice Hockey Project -->
+      <div class="col-md-6 mb-3" style="display: block;">
         <div class="card">
           <div class="card-body">
-            <div class="text-center img py-2"><img src="images/FTIH_Logo_500x500.png" alt="" width="100" height="100"></div>
-            <h5 class="card-title; text-center">Florida Tech Ice Hockey</h5>
-            <p class="card-text">Website and logo created for the Florida Tech Ice Hockey team. Project is built on
-              WordPress, using a theme as a starting point. Pages use HTML and CSS, with roster and stats pages
-              utilizing PHP and Vue.js to read and display data from MySQL database.</p>
-            <div class="text-center">
-              <a href="https://floridatechhockey.com" target="_blank" class="btn btn-secondary">Visit</a>
+            <div class="text-center img py-2"><img src="images/FTIH_Logo_500x500.png" alt="Florida Tech Ice Hockey Logo" width="100" height="100"></div>
+            <h5 class="card-title text-center">Florida Tech Ice Hockey</h5>
+            <p class="card-text">Developed the website and logo for the Florida Tech Ice Hockey team on WordPress, with a custom stats section using PHP, Vue.js, and MySQL. Though now using the school's system, the original site remains live.</p>
+            <div class="text-center button-row">
+              <a href="https://floridatechhockey.com/stats" target="_blank" class="btn btn-secondary">View Stats Page</a>
             </div>
           </div>
         </div>
@@ -436,25 +449,24 @@
     <a href="https://www.linkedin.com/in/rgmcintosh/" target="_blank" class="btn btn-light btn-lg">Connect on LinkedIn</a>
 </section>
 
+  <footer class="mt-5 p-4 bg-dark text-white text-center">
+    <p>© 2024 Rob McIntosh</p>
+  </footer>
 
-  <div class="mt-5 p-4 bg-dark text-white text-center">
-    <footer>&copy; 2024 Rob McIntosh</footer>
-  </div>
+  <script>
+    $(document).ready(function () {
+      $("#demo").css("display", "none");
+      $("#btn").click(function () {
+        $("#demo").toggle();
+      });
+    });
+    document.querySelector('.fa-linkedin').addEventListener('click', function() {
+      gtag('event', 'click', {
+        'event_category': 'social_link',
+        'event_label': 'LinkedIn'
+      });
+    });
+  </script>
 </body>
 
 </html>
-
-<script>
-  $(document).ready(function () {
-    $("#demo").css("display", "none");
-    $("#btn").click(function () {
-      $("#demo").toggle();
-    });
-  });
-  document.querySelector('.fa-linkedin').addEventListener('click', function() {
-  gtag('event', 'click', {
-    'event_category': 'social_link',
-    'event_label': 'LinkedIn'
-  });
-});
-</script>
