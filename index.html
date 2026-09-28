@@ -1,472 +1,240 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWTXF10KYX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-HWTXF10KYX');
-    </script>
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-    <title>Rob McIntosh</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Rob McIntosh's personal site, featuring IT expertise, hockey coaching, and the SyncHockey app for game analysis.">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        .navbar .navbar-nav .sm-icons {
-            flex-direction: row;
-        }
-
-        .navbar .navbar-nav .sm-icons .nav-link {
-            padding-right: 1em;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            transition: background-color 0.3s ease;
-        }
-
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .hero-section {
-            background: #f5f5f5;
-            background-size: cover;
-            color: #333;
-            padding: 100px 0;
-            border-radius: 0 0 20px 20px;
-        }
-        .hero-title {
-            font-size: 3rem;
-            font-weight: bold;
-        }
-
-        .hero-description {
-            font-size: 1.25rem;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .social-icons a {
-            color: #6c757d;
-            transition: color 0.3s ease;
-            padding: 1em;
-        }
-
-        .social-icons a:hover {
-            color: #007bff;
-        }
-
-        .synchockey-section {
-            background-color: #1a237e; /* Dark blue for hockey feel */
-            color: #fff;
-        }
-        .synchockey-section .card {
-            background-color: rgba(255, 255, 255, 0.1);
-            border: none;
-        }
-        .synchockey-section .card-title {
-            color: #00b7ff; /* Light blue for contrast */
-        }
-        .synchockey-section .card-text {
-            color: #e0e0e0;
-        }
-        .portfolio-logo {
-  max-width: 100px; /* Adjust the size to fit within the card */
-  height: auto;
-  border-radius: 50%; /* This will make the image fully rounded, like a circle */
-}
-#portfolio .row .col-md-6 .card {
-  height: 100%; /* This ensures the card takes up the full height of its parent */
-}
-
-#portfolio .row .col-md-6 {
-  display: flex; /* Flexbox for equal height */
-}
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Rob McIntosh builds software and data systems for healthcare operations and college hockey. Creator of SyncSports, ScoreKeep, and the College Hockey South app.">
+  <meta name="theme-color" content="#10283d">
+  <title>Rob McIntosh | Software, data &amp; product development</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #10283d; --body: #334657; --muted: #617381; --line: #d8e0e4;
+      --paper: #f7f8f6; --blue: #235f85; --red: #af4050;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+    body { margin: 0; color: var(--body); background: #fff; font-family: Inter, Arial, sans-serif; line-height: 1.65; }
+    a { color: var(--blue); text-underline-offset: .2em; }
+    a:hover { color: var(--ink); }
+    a:focus-visible { outline: 3px solid var(--red); outline-offset: 4px; border-radius: 2px; }
+    img { max-width: 100%; }
+    .skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 1100; padding: .5rem 1rem; background: #fff; }
+    .skip-link:focus { top: 1rem; }
+    .site-nav { position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); backdrop-filter: blur(10px); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 70px; }
+    .brand { color: var(--ink); font-size: 1.04rem; font-weight: 700; letter-spacing: -.03em; text-decoration: none; white-space: nowrap; }
+    .site-links { display: flex; justify-content: flex-end; gap: clamp(.8rem, 2vw, 2rem); }
+    .site-links a { color: var(--body); font-size: .86rem; font-weight: 600; text-decoration: none; }
+    .site-links a:hover { color: var(--blue); }
+    .menu-toggle { display: none; }
+    .hero { padding: clamp(4rem, 8vw, 7rem) 0; background: var(--paper); border-bottom: 1px solid var(--line); }
+    .hero-copy { max-width: 700px; }
+    .eyebrow { margin-bottom: 1.2rem; color: var(--blue); font-size: .73rem; font-weight: 700; letter-spacing: .13em; line-height: 1.45; text-transform: uppercase; }
+    h1, h2, h3 { color: var(--ink); letter-spacing: -.045em; }
+    h1 { max-width: 730px; margin-bottom: 0; font-size: clamp(2.55rem, 5.5vw, 4.8rem); font-weight: 700; line-height: 1.1; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 1.5rem; margin-top: 2rem; }
+    .button { display: inline-block; padding: .75rem 1.2rem; border: 1px solid var(--ink); border-radius: 3px; background: var(--ink); color: #fff; font-size: .88rem; font-weight: 600; text-decoration: none; }
+    .button:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+    .text-link { font-size: .88rem; font-weight: 600; }
+    .portrait-block { width: min(100%, 220px); margin: 0 0 0 auto; }
+    .portrait { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 4px; filter: saturate(.9); }
+    .portrait-note { margin: .8rem 0 0; color: var(--muted); font-size: .78rem; text-align: center; }
+    .section { padding: clamp(4rem, 7vw, 6rem) 0; }
+    .section-paper { background: var(--paper); }
+    .section-heading { max-width: 750px; margin-bottom: 2.6rem; }
+    h2 { margin-bottom: .8rem; font-size: clamp(1.9rem, 3.2vw, 2.7rem); font-weight: 700; line-height: 1.2; }
+    .section-intro { margin: 0; color: var(--muted); font-size: 1.02rem; }
+    .featured { padding: clamp(1.6rem, 4vw, 3rem); background: var(--ink); color: #d7e1e7; border-radius: 4px; }
+    .featured .eyebrow { color: #9ac7e3; }
+    .featured h3 { color: #fff; font-size: clamp(1.65rem, 2.8vw, 2.3rem); font-weight: 700; }
+    .featured p { max-width: 630px; }
+    .featured-identity { display: flex; align-items: center; justify-content: flex-end; gap: 1.1rem; }
+    .featured-identity img { width: 85px; height: 85px; padding: .35rem; background: #fff; border-radius: 4px; object-fit: contain; }
+    .featured-identity span { color: #a9c0ce; font-size: .8rem; }
+    .product-flow { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.5rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.22); }
+    .product-flow .step { color: #94b8cc; font-size: .75rem; font-weight: 700; letter-spacing: .1em; }
+    .product-flow h4 { margin: .55rem 0; color: #fff; font-size: 1rem; font-weight: 700; }
+    .product-flow p { margin: 0; color: #c8d7df; font-size: .9rem; }
+    .proof-links { display: flex; flex-wrap: wrap; gap: .6rem 1.5rem; margin-top: 2rem; }
+    .proof-links a { color: #fff; font-size: .86rem; font-weight: 600; }
+    .proof-links a:hover { color: #bce3fb; }
+    .work-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3.5rem; }
+    .work-item { padding-top: 1.3rem; border-top: 2px solid var(--ink); }
+    .work-icon { display: block; width: 52px; height: 52px; margin-bottom: 1rem; border-radius: 11px; object-fit: contain; }
+    .work-icon--dark { padding: .4rem; background: var(--ink); }
+    .work-item .work-label { color: var(--muted); font-size: .75rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+    .work-item h3 { margin: .65rem 0 .65rem; font-size: 1.27rem; font-weight: 700; }
+    .work-item p { margin-bottom: .75rem; font-size: .93rem; }
+    .healthcare { background: #eaf0f2; }
+    .healthcare .context { max-width: 700px; }
+    .evidence-list { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.8rem; margin-top: 2.3rem; }
+    .evidence-list article { padding-top: 1rem; border-top: 1px solid #a9b9c2; }
+    .evidence-list h3 { font-size: 1.03rem; font-weight: 700; }
+    .evidence-list p { margin: 0; font-size: .9rem; }
+    .experience-list { border-top: 1px solid var(--line); }
+    .experience-row { display: grid; grid-template-columns: 155px minmax(0,1fr); gap: 1.5rem; padding: 1.3rem 0; border-bottom: 1px solid var(--line); }
+    .experience-row time { color: var(--muted); font-size: .82rem; }
+    .experience-row h3 { margin: 0 0 .25rem; font-size: 1.05rem; font-weight: 700; }
+    .experience-row p { margin: 0; font-size: .9rem; }
+    .experience-row .employer { color: var(--muted); }
+    .about-copy { max-width: 750px; font-size: 1.02rem; }
+    .about-copy p:last-child { margin-bottom: 0; }
+    .contact { padding: clamp(3.5rem, 6vw, 5rem) 0; background: var(--ink); color: #c8d7df; }
+    .contact h2 { color: #fff; }
+    .contact p { max-width: 600px; }
+    .contact a { color: #fff; font-weight: 600; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: .7rem 1.7rem; margin-top: 1.4rem; }
+    .footer { padding: 1.4rem 0; color: var(--muted); font-size: .78rem; }
+    @media (max-width: 900px) {
+      .nav-inner { position: relative; min-height: 64px; }
+      .menu-toggle { display: inline-flex; align-items: center; gap: .45rem; padding: .4rem .65rem; border: 1px solid var(--line); border-radius: 4px; background: #fff; color: var(--ink); font-size: .85rem; font-weight: 600; }
+      .menu-toggle svg { transition: transform .2s ease; }
+      .menu-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+      .menu-toggle:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+      .site-links { display: none; position: absolute; top: calc(100% - 1px); left: .75rem; right: .75rem; flex-direction: column; gap: 0; padding: .4rem; border: 1px solid var(--line); border-radius: 4px; background: #fff; box-shadow: 0 12px 25px rgba(16,40,61,.12); }
+      .menu-toggle[aria-expanded="true"] + .site-links { display: flex; }
+      .site-links a { padding: .6rem .75rem; border-radius: 3px; }
+      .site-links a:hover { background: var(--paper); }
+    }
+    @media (max-width: 991px) {
+      .portrait-wrap { margin-top: 2.5rem; }
+      .portrait-block { margin: 0 auto; }
+      .featured-identity { justify-content: flex-start; margin-top: 1.5rem; }
+    }
+    @media (max-width: 767px) {
+      html { scroll-padding-top: 5rem; }
+      .product-flow, .work-list, .evidence-list { grid-template-columns: 1fr; }
+      .experience-row { grid-template-columns: 1fr; gap: .25rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .menu-toggle svg { transition: none; } }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HWTXF10KYX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HWTXF10KYX');
+  </script>
 </head>
-
 <body>
-  <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Rob McIntosh</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">About Me</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#experience">My Experience</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#portfolio">Portfolio</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav sm-icons ms-auto">
-          <li><a class="nav-link" href="mailto:rob@rgmcintosh.com" target="_blank"><i class="fa-solid fa-envelope"
-            aria-hidden="true"></i></a></li>
-            <li><a class="nav-link" href="https://www.linkedin.com/in/rgmcintosh/" target="_blank"><i class="fa-brands fa-linkedin"
-              aria-hidden="true"></i></a></li>
-          <li><a class="nav-link" href="https://github.com/rgmcintosh" target="_blank"><i class="fa-brands fa-github"
-                aria-hidden="true"></i></a></li>
-          <li><a class="nav-link" href="resume/RobertGMcIntosh-Resume.pdf" target="_blank"><i
-                class="fa-solid fa-file" aria-hidden="true"></i></a></li>
-        </ul>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Rob McIntosh</a>
+      <button class="menu-toggle" type="button" aria-controls="site-links" aria-expanded="false">Menu <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="m2 5 5 5 5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="site-links" id="site-links">
+        <a href="#work">Work</a><a href="#healthcare">Healthcare</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
-
-  <div class="hero-section bg-light px-4 py-5 my-5 text-center">
-    <img class="d-block mx-auto mb-4 rounded-circle" src="images/RM_300x300.png" alt="Rob McIntosh" width="300" height="300">
-    <h1 class="hero-title">Hi, I'm Rob McIntosh!</h1>
-    <p class="hero-description">I’m an IT professional specializing in data and web solutions, focused on driving efficiency and innovation. I also coach hockey, where I apply my strategic skills to achieve success both on and off the ice.</p>
-    <div class="social-icons d-flex justify-content-center mb-4">
-        <a class="nav-link me-3" href="mailto:rob@rgmcintosh.com" target="_blank"><i class="fa-solid fa-envelope fa-2x"></i></a>
-        <a class="nav-link me-3" href="https://www.linkedin.com/in/rgmcintosh/" target="_blank"><i class="fa-brands fa-linkedin fa-2x"></i></a>
-        <a class="nav-link me-3" href="https://github.com/rgmcintosh" target="_blank"><i class="fa-brands fa-github fa-2x"></i></a>
-        <a class="nav-link me-3" href="resume/RobertGMcIntosh-Resume.pdf" target="_blank"><i class="fa-solid fa-file fa-2x"></i></a>
-    </div>
-  </div>
-
-  <div id="about" class="container px-4 py-5 my-5 bg-light">
-    <h2 class="text-center my-4">About Me</h2>
-    <div class="row g-4 mb-4">
-      <div class="col-sm-8">
-        <p>Hi, I'm Rob McIntosh, an information technology professional with a passion for data and web technologies. With several years of experience in the field, I have developed a strong expertise in managing and analyzing complex datasets, leveraging technology to drive insights and improve decision-making processes. I thrive in the fast-paced and ever-evolving world of IT, constantly seeking innovative solutions to enhance operational efficiency and drive business growth.</p>
-      </div>
-      <div class="col-sm-4 text-center">
-        <img src="images/NASA_250x250.png" class="rounded" alt="NASA Logo">
-      </div>
-  </div>
-
-    <div class="row g-4">
-        <div class="col-12 col-md-4 text-center">
-            <img src="images/coach_250x250.png" class="rounded" alt="Coach Image">
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="intro-title">
+      <div class="container"><div class="row align-items-center">
+        <div class="col-lg-8 hero-copy">
+          <p class="eyebrow">Software development · Data systems · Product ownership</p>
+          <h1 id="intro-title">I build software people can put to work.</h1>
+          <div class="hero-actions"><a class="button" href="#work">See selected work</a><a class="text-link" href="mailto:rob@rgmcintosh.com">Get in touch ↗</a></div>
         </div>
-        <div class="col-12 col-md-8">
-            <p>In addition to my work in IT, I am also a college hockey coach for my alma mater. Hockey has always been a huge part of my life, and it's been incredibly rewarding to be able to combine my love for the sport with my expertise in data analysis. By using data to inform our coaching decisions and strategy, we've been able to achieve some great results on the ice. Overall, I feel incredibly fortunate to be able to pursue both of my passions in my career, and I'm always looking for new opportunities to learn and grow in both the technology and hockey worlds.</p>
+        <div class="col-lg-4 portrait-wrap">
+          <figure class="portrait-block">
+            <img class="portrait" src="images/RM_300x300.png" width="300" height="300" alt="Portrait of Rob McIntosh">
+            <figcaption class="portrait-note">Developer, product builder, and college hockey coach.</figcaption>
+          </figure>
         </div>
-    </div>
-  </div>
-
-  <div id="experience" class="container px-4 py-5 my-5 bg-light">
-    <h2 class="text-center py-3">My Experience</h2>
-    <div class="row no-gutters">
-      <div class="col-sm">
-      </div>
-      <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-        <h5 class="m-2">
-          <span class="badge rounded-pill bg-light border">&nbsp;</span>
-        </h5>
-        <div class="row h-50">
-          <div class="col border-right" style="border-right: 1px solid #ccc;">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-      </div>
-      <div class="col-sm py-2">
-        <div class="card">
-          <div class="card-body">
-            <div class="text-center py-2"><img src="images/GSE.jpeg" alt="" width="100px" height="100px"></div>
-            <div class="float-right text-muted small">Oct 2020 - Present</div>
-            <h4 class="card-title">Applications Programmer</h4>
-            <p class="card-text">NASA Occupational Health Contract Team (GSE, Inc.)</p>
-            <div class="accordion accordion-flush" id="accordionFlushOne">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
-                  <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    Roles & Responsibilities
-                  </button>
-                </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                  data-bs-parent="#accordionFlushExample">
-                  <div class="accordion-body">
-                    <ul>
-                      <li>Act as the team’s IT lead, providing technical expertise and guidance to NASA’s Office of the Chief Health and Medical Officer and team members, while also managing and mentoring junior IT staff</li>
-                      <li>Interface with NASA leadership to develop innovative solutions for electronic health record (EHR) system needs, including data integration, dashboard creation, report automation, and software configuration</li>
-                      <li>Developed a Python executable utilizing MSSQL to extract, transform, and load clinical data from a medical device software database into an EHR system via API integration</li>
-                      <li>Successfully utilized Python and Pandas to migrate 40 years of clinic records from a legacy system to a new EHR system, ensuring data integrity and a seamless transition</li>
-                      <li>Initiated the adoption of Power BI within our team, leveraging EHR data through OData to create interactive dashboards for health professionals, facilitating informed decision-making</li>
-                      <li>Manage HR ETL process with PostgreSQL and PowerShell; improved efficiency using C# and SharePoint API</li>
-                      <li>Spearheaded the development of an Agency-wide data compilation and reporting system using C#, SQL, and SSIS, providing daily statistics to NASA leadership through SSRS and BI dashboards</li>
-                      <li>Led the successful migration of our team's codebase to GitHub, optimizing collaboration, version control, and code management processes</li>
-                      <li>Directed integration efforts to ensure smooth data exchange between medical devices and EHR system, enhancing workflows and clinical decision support across multiple Agency locations</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+      </div></div>
+    </section>
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Selected work</p><h2 id="work-title">Built for real use.</h2><p class="section-intro">These projects help people manage operations, make decisions, and share information.</p></div>
+        <article class="featured" aria-labelledby="syncsports-title">
+          <div class="row align-items-start">
+            <div class="col-lg-9">
+              <p class="eyebrow">SyncSports · Used by College Hockey South</p>
+              <h3 id="syncsports-title">One league, connected software.</h3>
+              <p>I created SyncSports and built the tools College Hockey South uses to run games and keep fans informed. ScoreKeep captures game events, and the league site publishes schedules, scores, standings, and statistics. The CHS mobile app brings that information to fans, while Broadcast adds live scores to team streams.</p>
+            </div>
+            <div class="col-lg-3 featured-identity" aria-label="ScoreKeep and College Hockey South logos">
+              <img src="images/scorekeep-icon.png" width="85" height="85" alt="ScoreKeep logo"><span>×</span><img src="images/chs-logo.png" width="85" height="85" alt="College Hockey South logo">
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-sm py-2">
-        <div class="card">
-          <div class="card-body">
-            <div class="text-center py-2"><img src="images/Primary-logo_stacked_color.png" alt="" width="100px"
-                height="86px"></div>
-            <div class="float-right text-muted small">Aug 2020 - Present</div>
-            <h4 class="card-title">Head Coach</h4>
-            <p class="card-text">Florida Institute of Technology Ice Hockey</p>
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingTwo">
-                  <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    Roles & Responsibilities
-                  </button>
-                </h2>
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-                  data-bs-parent="#accordionFlushExample">
-                  <div class="accordion-body">
-                    <ul>
-                      <li>Lead a team of college student-athletes, employing effective coaching techniques to maximize game performance and foster individual growth</li>
-                      <li>•	Utilized Vue.js, Bootstrap, and Google Firebase (Firestore, Authentication, Cloud Storage) to develop a web application for sharing scouting reports, game recaps, statistics, and advanced analytics, improving team performance analysis and strategic planning</li>
-                      <li>Developed and implemented practice plans and drills to improve individual and team performance, utilizing analytics for strategic decision-making and instruction</li>
-                      <li>Sparked a 105% membership increase over four seasons through effective recruitment strategies and coaching methodologies, igniting player enthusiasm</li>
-                      <li>Created and maintain the organization's website using WordPress, incorporating Vue.js, PHP, and MySQL to manage statistics and roster pages</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="product-flow">
+            <div><span class="step">01 / GAME OPERATIONS</span><h4>ScoreKeep</h4><p>Digital scoring, game events, rosters, and league administration.</p></div>
+            <div><span class="step">02 / LEAGUE PUBLISHING</span><h4>CHS league site</h4><p>Schedules, standings, player statistics, news, and game information.</p></div>
+            <div><span class="step">03 / FAN EXPERIENCE</span><h4>CHS mobile app</h4><p>Scores, schedules, standings, stats, and league updates on iOS and Android.</p></div>
           </div>
-        </div>
-      </div>
-      <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col border-right" style="border-right: 1px solid #ccc;">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-        <h5 class="m-2">
-          <span class="badge rounded-pill bg-light border">&nbsp;</span>
-        </h5>
-        <div class="row h-50">
-          <div class="col border-right" style="border-right: 1px solid #ccc;">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-      </div>
-      <div class="col-sm">
-      </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-sm">
-      </div>
-      <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col border-right" style="border-right: 1px solid #ccc;">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-        <h5 class="m-2">
-          <span class="badge rounded-pill bg-light border">&nbsp;</span>
-        </h5>
-        <div class="row h-50">
-          <div class="col border-right" style="border-right: 1px solid #ccc;">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-      </div>
-      <div class="col-sm py-2">
-        <div class="card">
-          <div class="card-body">
-            <div class="text-center py-2"><img src="images/GSE.jpeg" alt="" width="100px" height="100px"></div>
-            <div class="float-right text-muted small">Nov 2018 - Oct 2020</div>
-            <h4 class="card-title">Applications Analyst</h4>
-            <p class="card-text">NASA Occupational Health Contract Team (GSE, Inc.)</p>
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingThree">
-                  <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    Roles & Responsibilities
-                  </button>
-                </h2>
-                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                  data-bs-parent="#accordionFlushExample">
-                  <div class="accordion-body">
-                    <ul>
-                      <li>Developed, maintained, and enhanced Drupal-based webpages for NASA’s Office of the Chief Health and Medical Officer, ensuring compliance with web accessibility standards, using HTML, CSS, and JavaScript</li>
-                      <li>Managed SharePoint permissions, site structures, and document libraries</li>
-                      <li>Performed extraction, transformation, and loading of data to EHR system with PostgreSQL and PowerShell</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="proof-links">
+            <a href="https://www.collegehockeysouth.com/" target="_blank" rel="noopener noreferrer">Explore the CHS site ↗</a>
+            <a href="https://apps.apple.com/us/app/college-hockey-south/id6761658513" target="_blank" rel="noopener noreferrer">CHS app for iOS ↗</a>
+            <a href="https://play.google.com/store/apps/details?id=com.rgmcintosh.leaguesync.chs" target="_blank" rel="noopener noreferrer">CHS app for Android ↗</a>
+            <a href="https://apps.apple.com/us/app/scorekeep-by-syncsports/id6757368364" target="_blank" rel="noopener noreferrer">ScoreKeep app ↗</a>
+            <a href="https://scorekeep.syncsports.app/" target="_blank" rel="noopener noreferrer">ScoreKeep ↗</a>
           </div>
+        </article>
+        <div class="work-list" aria-label="More work">
+          <article class="work-item"><img class="work-icon" src="images/benchmark-icon.png" width="52" height="52" loading="lazy" alt="Benchmark logo"><span class="work-label">Coaching analytics</span><h3>Benchmark</h3><p>Benchmark is the coaching app I built and use with Florida Tech Ice Hockey. It captures shots, faceoffs, and other game details alongside the official score, then turns that team-only data into recaps and scouting views.</p><a class="text-link" href="https://benchmark.syncsports.app/" target="_blank" rel="noopener noreferrer">Visit Benchmark ↗</a></article>
+          <article class="work-item"><img class="work-icon work-icon--dark" src="images/broadcast-icon.png" width="52" height="52" loading="lazy" alt="Broadcast icon"><span class="work-label">Live broadcasts</span><h3>Broadcast</h3><p>I built broadcast overlays that pull live game data into hockey streams. CHS teams use a single OBS link for an automatically updated scorebug and a ticker of the day’s games.</p><a class="text-link" href="https://broadcast.syncsports.app/" target="_blank" rel="noopener noreferrer">Visit Broadcast ↗</a></article>
+          <article class="work-item"><img class="work-icon" src="images/gse-field-icon.png" width="52" height="52" loading="lazy" alt="GSE logo"><span class="work-label">Field operations</span><h3>GSE field app</h3><p>GSE field staff and administrators use the mobile app and connected web tools I created to manage jobs, drilling logs, inspections, receipts, and billing reports.</p></article>
         </div>
       </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-sm py-2">
-        <div class="card">
-          <div class="card-body">
-            <div class="text-center py-2"><img src="images/SDI.png" alt="" width="" height=""></div>
-            <div class="float-right text-muted small">May 2017 - Nov 2018</div>
-            <h4 class="card-title">Technical Support Analyst</h4>
-            <p class="card-text">SDI Systems</p>
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingFour">
-                  <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                    Roles & Responsibilities
-                  </button>
-                </h2>
-                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
-                  data-bs-parent="#accordionFlushExample">
-                  <div class="accordion-body">
-                    <ul>
-                      <li>Provided round-the-clock technical support to customers and field technicians, both on-site and remotely</li>
-                      <li>Executed SQL queries and manipulations on client databases using SQL Server Management Studio</li>
-                      <li>Leveraged remote connectivity and virtualization tools to troubleshoot system hardware, software, and end-user issues</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    </section>
+    <section class="section healthcare" id="healthcare" aria-labelledby="healthcare-title">
+      <div class="container">
+        <p class="eyebrow">Healthcare data &amp; integration</p><h2 id="healthcare-title">Connecting clinical data to the people who need it.</h2>
+        <p class="context">On the NASA Occupational Health Contract, I work with health staff and leadership to connect data, improve reporting, and support clinical workflows.</p>
+        <div class="evidence-list">
+          <article><h3>Clinical data migration</h3><p>Used Python and Pandas to move 40 years of clinic records from a legacy system into a new EHR.</p></article>
+          <article><h3>Medical device integration</h3><p>Built a Python and SQL workflow to transform device data and send it to an EHR through an API.</p></article>
+          <article><h3>Reporting for decisions</h3><p>Developed automated reporting and Power BI dashboards so health professionals and leadership can work from current data.</p></article>
         </div>
       </div>
-      <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col border-right" style="border-right: 1px solid #ccc;">&nbsp;</div>
-          <div class="col">&nbsp;</div>
+    </section>
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-heading"><p class="eyebrow">Experience</p><h2 id="experience-title">Where I’ve worked.</h2><p class="section-intro">I’ve worked across software development, healthcare data, operations, and coaching.</p></div>
+        <div class="experience-list">
+          <div class="experience-row"><time>2026 – present</time><div><h3>Health Informatics and Information Technology Lead</h3><p class="employer">GSE, Inc. · NASA Occupational Health Contract</p><p>Technical lead for data integration, reporting, and application work supporting the occupational health program.</p></div></div>
+          <div class="experience-row"><time>2025 – present</time><div><h3>General Manager</h3><p class="employer">Florida Tech Ice Hockey</p><p>Lead program operations, planning, recruiting, and relationships with sponsors and stakeholders.</p></div></div>
+          <div class="experience-row"><time>2020 – present</time><div><h3>Head Coach</h3><p class="employer">Florida Tech Ice Hockey</p><p>Coach student athletes and use game analysis to inform preparation and decisions.</p></div></div>
+          <div class="experience-row"><time>2020 – 2026</time><div><h3>Applications Programmer</h3><p class="employer">GSE, Inc. · NASA Occupational Health Contract</p><p>Developed applications, data integrations, and reports for the occupational health program.</p></div></div>
+          <div class="experience-row"><time>2018 – 2020</time><div><h3>Applications Analyst</h3><p class="employer">GSE, Inc. · NASA Occupational Health Contract</p><p>Worked on accessible web pages, SharePoint, and data movement into the EHR.</p></div></div>
+          <div class="experience-row"><time>2017 – 2018</time><div><h3>Technical Support Analyst</h3><p class="employer">SDI Systems</p><p>Supported customers and field technicians and investigated data and system issues.</p></div></div>
         </div>
-        <h5 class="m-2">
-          <span class="badge rounded-pill bg-light border">&nbsp;</span>
-        </h5>
-        <div class="row h-50">
-          <div class="col border-right" style="border-right: 1px solid #ccc;">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
+        <p class="mt-4 mb-0"><strong>Education:</strong> BS in Information Systems, Florida Institute of Technology.</p>
       </div>
-      <div class="col-sm">
-      </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col-sm">
-      </div>
-      <div class="col-sm-1 text-center flex-column d-none d-sm-flex">
-        <div class="row h-50">
-          <div class="col border-right" style="border-right: 1px solid #ccc;">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-        <h5 class="m-2">
-          <span class="badge rounded-pill bg-light border">&nbsp;</span>
-        </h5>
-        <div class="row h-50">
-          <div class="col">&nbsp;</div>
-          <div class="col">&nbsp;</div>
-        </div>
-      </div>
-      <div class="col-sm py-2">
-        <div class="card">
-          <div class="card-body">
-            <div class="text-center"><img src="images/Primary-logo_stacked_color.png" alt="" width="100px"
-                height="86px"></div>
-            <div class="float-right text-muted small">Dec 2016</div>
-            <h4 class="card-title">BS Information Systems</h4>
-            <p class="card-text">Florida Institute of Technology</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="portfolio" class="container px-4 py-5 my-5 bg-light">
-    <h2 class="text-center py-3">Portfolio</h2>
-    <div class="row justify-content-center">
-      <!-- SyncHockey Project -->
-      <div class="col-md-6 mb-3">
-        <div class="card">
-          <div class="card-body">
-            <div class="text-center img py-2">
-              <img src="images/SyncHKY.png" alt="SyncHKY Logo" width="100" height="100" class="img-fluid portfolio-logo">
-            </div>
-            <h5 class="card-title text-center">SyncHKY</h5>
-            <p class="card-text">Developed SyncHKY, a Vue.js-based web app for tracking live game data, generating scouting reports, and providing team analytics. Utilizes D3.js for data visualization and Firebase for backend services. Used by Florida Tech Ice Hockey to track 200+ data points per game. Open to feedback from coaches and players to continuously improve features.</p>
-            <div id class="text-center button-row">
-              <a href="https://synchky.com" target="_blank" class="btn btn-secondary">Visit SyncHKY</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Florida Tech Ice Hockey Project -->
-      <div class="col-md-6 mb-3" style="display: block;">
-        <div class="card">
-          <div class="card-body">
-            <div class="text-center img py-2"><img src="images/FTIH_Logo_500x500.png" alt="Florida Tech Ice Hockey Logo" width="100" height="100"></div>
-            <h5 class="card-title text-center">Florida Tech Ice Hockey</h5>
-            <p class="card-text">Developed the website and logo for the Florida Tech Ice Hockey team, with a custom stats section using PHP, Vue.js, and MySQL. Though now using the school's system, the original site remains live.</p>
-            <div class="text-center button-row">
-              <a href="https://floridatechhockey.com/stats" target="_blank" class="btn btn-secondary">View Stats</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <section class="contact-section bg-dark text-white text-center py-5 mt-4">
-    <h2 class="mb-4">Let's Get in Touch</h2>
-    <p>Feel free to drop me a message or connect on LinkedIn.</p>
-    <a href="mailto:rob@rgmcintosh.com" class="btn btn-primary btn-lg me-3">Email Me</a>
-    <a href="https://www.linkedin.com/in/rgmcintosh/" target="_blank" class="btn btn-light btn-lg">Connect on LinkedIn</a>
-</section>
-
-  <footer class="mt-5 p-4 bg-dark text-white text-center">
-    <p>© 2024 Rob McIntosh</p>
-  </footer>
-
+    </section>
+    <section class="section section-paper" id="about" aria-labelledby="about-title">
+      <div class="container"><p class="eyebrow">About me</p><h2 id="about-title">Close to the work, from idea to daily use.</h2><div class="about-copy"><p>I like understanding how people actually do their jobs, finding what slows them down, and building tools that help them work more efficiently. That approach has shaped the healthcare data and EHR integrations I’ve built, along with scorekeeping and league tools for hockey.</p><p>Hockey is a big part of my life outside my day job. Coaching at Florida Tech has given me a direct view of the problems teams and leagues face, and it continues to shape what I build.</p></div></div>
+    </section>
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container"><p class="eyebrow" style="color:#9ac7e3">Get in touch</p><h2 id="contact-title">Let’s connect.</h2><p>I’m interested in conversations about software, data, healthcare technology, hockey, and products built around real workflows.</p><div class="contact-links"><a href="mailto:rob@rgmcintosh.com">Email me ↗</a><a href="https://www.linkedin.com/in/rgmcintosh/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/rgmcintosh" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container">© 2026 Rob McIntosh</div></footer>
   <script>
-    $(document).ready(function () {
-      $("#demo").css("display", "none");
-      $("#btn").click(function () {
-        $("#demo").toggle();
-      });
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteLinks = document.querySelector('#site-links');
+    const closeMenu = () => menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.addEventListener('click', () => {
+      menuToggle.setAttribute('aria-expanded', String(menuToggle.getAttribute('aria-expanded') !== 'true'));
     });
-    document.querySelector('.fa-linkedin').addEventListener('click', function() {
-      gtag('event', 'click', {
-        'event_category': 'social_link',
-        'event_label': 'LinkedIn'
-      });
+    siteLinks.addEventListener('click', (event) => {
+      if (event.target.closest('a')) closeMenu();
+    });
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.nav-inner')) closeMenu();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+        closeMenu();
+        menuToggle.focus();
+      }
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) closeMenu();
     });
   </script>
 </body>
-
 </html>
